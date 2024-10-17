@@ -21,6 +21,7 @@ export class UsuarioAdminRoutedComponent implements OnInit {
   sortField: string = '';
   sortOrder: string = '';
   itemsPerPage: number = 10;
+  searchText: string = '';
 
   constructor(
     private oUsuarioService: UsuarioService,
@@ -90,5 +91,10 @@ export class UsuarioAdminRoutedComponent implements OnInit {
     this.page--;
     this.getPage();
     return false;
+  }
+
+  search() {
+    this.page = 0;
+    this.getPage();
   }
 }

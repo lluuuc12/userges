@@ -76,6 +76,14 @@
         </ul>
       </nav>
 
+      <input
+        type="text"
+        class="form-control mb-3"
+        [(ngModel)]="searchText"
+        placeholder="Buscar"
+      />
+      <button class="btn btn-primary mb-3" (click)="search()">Buscar</button>
+
       <div class="d-flex flex-column">
         <table class="table table-striped table-bordered my-3 w-100">
           <thead>
