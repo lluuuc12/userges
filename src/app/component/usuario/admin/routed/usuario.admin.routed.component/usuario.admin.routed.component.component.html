@@ -50,7 +50,7 @@
           <li class="page-item">
             <a
               class="page-link"
-              [class.disabled]="itemsPerPage === 10"
+              [class.active]="itemsPerPage === 10"
               (click)="changeItemsPerPage(10)"
               >10</a
             >
@@ -59,7 +59,7 @@
           <li class="page-item">
             <a
               class="page-link"
-              [class.disabled]="itemsPerPage === 50"
+              [class.active]="itemsPerPage === 50"
               (click)="changeItemsPerPage(50)"
               >50</a
             >
@@ -68,7 +68,7 @@
           <li class="page-item">
             <a
               class="page-link"
-              [class.disabled]="itemsPerPage === 100"
+              [class.active]="itemsPerPage === 100"
               (click)="changeItemsPerPage(100)"
               >100</a
             >
