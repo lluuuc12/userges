@@ -14,7 +14,8 @@ export class UsuarioService {
     page: number,
     size: number,
     sortField: string,
-    sortOrder: string
+    sortOrder: string,
+    filterText: string
   ): Observable<IPage<IUsuario>> {
     return this.oHttp.get<IPage<IUsuario>>(
       'http://localhost:8085' +

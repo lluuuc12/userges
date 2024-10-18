@@ -34,7 +34,13 @@ export class UsuarioAdminRoutedComponent implements OnInit {
 
   getPage() {
     this.oUsuarioService
-      .getPage(this.page, this.itemsPerPage, this.sortField, this.sortOrder)
+      .getPage(
+        this.page,
+        this.itemsPerPage,
+        this.sortField,
+        this.sortOrder,
+        this.searchText
+      )
       .subscribe({
         next: (arrUsuario: IPage<IUsuario>) => {
           this.arrUsuarios = arrUsuario.content;
