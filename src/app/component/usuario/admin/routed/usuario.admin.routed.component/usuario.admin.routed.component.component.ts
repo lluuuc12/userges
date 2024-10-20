@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { IPage } from '../../../../../model/model.interface';
 import { FormsModule } from '@angular/forms';
 import { BotoneraService } from '../../../../../service/botonera.service';
+import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-usuario.admin.routed',
@@ -21,12 +22,19 @@ export class UsuarioAdminRoutedComponent implements OnInit {
   sortField: string = '';
   sortOrder: string = '';
   itemsPerPage: number = 10;
+
+  searchTextSubject = new Subject<string>();
   searchText: string = '';
 
   constructor(
     private oUsuarioService: UsuarioService,
     private oBotoneraService: BotoneraService
-  ) {}
+  ) {
+    this.searchTextSubject.pipe(debounceTime(500)).subscribe((searchText) => {
+      this.searchText = searchText;
+      this.search();
+    });
+  }
 
   ngOnInit() {
     this.getPage();
