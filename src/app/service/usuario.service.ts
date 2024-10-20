@@ -26,7 +26,9 @@ export class UsuarioService {
         '&sort=' +
         sortField +
         ',' +
-        sortOrder
+        sortOrder +
+        '&filter=' +
+        filterText
     );
   }
 }
