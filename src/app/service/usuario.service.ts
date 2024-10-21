@@ -31,4 +31,12 @@ export class UsuarioService {
         filterText
     );
   }
+
+  getById(id: number) {
+    return this.oHttp.get<IUsuario>('http://localhost:8085/usuario/' + id);
+  }
+
+  delete(id: number) {
+    return this.oHttp.delete('http://localhost:8085/usuario/' + id);
+  }
 }

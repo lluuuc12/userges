@@ -6,6 +6,7 @@ import { IPage } from '../../../../../../model/model.interface';
 import { FormsModule } from '@angular/forms';
 import { BotoneraService } from '../../../../../../service/botonera.service';
 import { debounceTime, Subject } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario.admin.routed',
@@ -28,7 +29,8 @@ export class UsuarioAdminRoutedComponent implements OnInit {
 
   constructor(
     private oUsuarioService: UsuarioService,
-    private oBotoneraService: BotoneraService
+    private oBotoneraService: BotoneraService,
+    private router: Router
   ) {
     this.searchTextSubject.pipe(debounceTime(500)).subscribe((searchText) => {
       this.searchText = searchText;
@@ -85,6 +87,7 @@ export class UsuarioAdminRoutedComponent implements OnInit {
 
   eliminar(oUsuario: IUsuario) {
     console.log('Borrar', oUsuario);
+    this.router.navigate(['/admin/usuario/delete', oUsuario.id]);
   }
 
   goToPage(p: number) {
