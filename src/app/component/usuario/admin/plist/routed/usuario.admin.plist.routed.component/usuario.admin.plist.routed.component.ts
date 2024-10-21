@@ -78,6 +78,7 @@ export class UsuarioAdminRoutedComponent implements OnInit {
 
   changeItemsPerPage(items: number) {
     this.itemsPerPage = items;
+    this.page = 0;
     this.getPage();
   }
 
