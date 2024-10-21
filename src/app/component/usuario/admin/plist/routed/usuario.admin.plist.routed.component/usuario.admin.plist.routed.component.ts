@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../../../../../service/usuario.service';
-import { IUsuario } from '../../../../../model/usuario.interface';
+import { UsuarioService } from '../../../../../../service/usuario.service';
+import { IUsuario } from '../../../../../../model/usuario.interface';
 import { CommonModule } from '@angular/common';
-import { IPage } from '../../../../../model/model.interface';
+import { IPage } from '../../../../../../model/model.interface';
 import { FormsModule } from '@angular/forms';
-import { BotoneraService } from '../../../../../service/botonera.service';
+import { BotoneraService } from '../../../../../../service/botonera.service';
 import { debounceTime, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-usuario.admin.routed',
-  templateUrl: './usuario.admin.routed.component.component.html',
-  styleUrls: ['./usuario.admin.routed.component.component.css'],
+  templateUrl: './usuario.admin.plist.routed.component.html',
+  styleUrls: ['./usuario.admin.plist.routed.component.css'],
   standalone: true,
   imports: [CommonModule, FormsModule],
 })
