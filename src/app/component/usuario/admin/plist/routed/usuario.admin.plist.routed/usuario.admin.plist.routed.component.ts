@@ -83,6 +83,10 @@ export class UsuarioAdminRoutedComponent implements OnInit {
     return false;
   }
 
+  crear() {
+    this.router.navigate(['/admin/usuario/new']);
+  }
+
   ver(oUsuario: IUsuario) {
     console.log('Ver', oUsuario);
     this.router.navigate(['/admin/usuario/view', oUsuario.id]);

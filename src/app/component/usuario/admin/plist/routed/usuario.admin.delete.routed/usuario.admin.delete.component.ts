@@ -6,10 +6,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   selector: 'app-usuario.admin.delete',
   standalone: true,
   imports: [],
-  templateUrl: './usuario.admin.view.component.html',
-  styleUrl: './usuario.admin.view.component.css',
+  templateUrl: './usuario.admin.delete.component.html',
+  styleUrl: './usuario.admin.delete.component.css',
 })
-export class UsuarioAdminViewComponent {
+export class UsuarioAdminDeleteRoutedComponent {
   id: number = 0;
   nombre: string = '';
   apellido1: string = '';
@@ -29,6 +29,19 @@ export class UsuarioAdminViewComponent {
       this.apellido1 = usuario.apellido1;
       this.apellido2 = usuario.apellido2;
       this.email = usuario.email;
+    });
+  }
+
+  delete(): void {
+    this.oUsuarioService.delete(this.id).subscribe({
+      next: (data) => {
+        console.log(data);
+        alert('Usuario eliminado');
+        this.router.navigate(['/admin/usuario/plist']);
+      },
+      error: (err) => {
+        console.log(err);
+      },
     });
   }
 
