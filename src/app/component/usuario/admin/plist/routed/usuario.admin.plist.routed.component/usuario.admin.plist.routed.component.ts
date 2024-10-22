@@ -90,6 +90,7 @@ export class UsuarioAdminRoutedComponent implements OnInit {
 
   editar(oUsuario: IUsuario) {
     console.log('Editar', oUsuario);
+    this.router.navigate(['admin/usuario/edit', oUsuario.id]);
   }
 
   eliminar(oUsuario: IUsuario) {
