@@ -80,6 +80,12 @@ export class UsuarioAdminRoutedComponent implements OnInit {
     this.itemsPerPage = items;
     this.page = 0;
     this.getPage();
+    return false;
+  }
+
+  ver(oUsuario: IUsuario) {
+    console.log('Ver', oUsuario);
+    this.router.navigate(['/admin/usuario/view', oUsuario.id]);
   }
 
   editar(oUsuario: IUsuario) {

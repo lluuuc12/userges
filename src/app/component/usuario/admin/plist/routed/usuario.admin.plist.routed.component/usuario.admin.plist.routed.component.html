@@ -48,6 +48,7 @@
           <li class="page-item">
             <a
               class="page-link"
+              href="#"
               [class.active]="itemsPerPage === 10"
               (click)="changeItemsPerPage(10)"
               >10</a
@@ -57,6 +58,7 @@
           <li class="page-item">
             <a
               class="page-link"
+              href="#"
               [class.active]="itemsPerPage === 50"
               (click)="changeItemsPerPage(50)"
               >50</a
@@ -66,6 +68,7 @@
           <li class="page-item">
             <a
               class="page-link"
+              href="#"
               [class.active]="itemsPerPage === 100"
               (click)="changeItemsPerPage(100)"
               >100</a
@@ -137,9 +140,13 @@
               <td>{{ usuario.apellido2 }}</td>
               <td>{{ usuario.email }}</td>
               <td>
+                <button class="btn btn-primary" (click)="ver(usuario)">
+                  Vista
+                </button>
                 <button class="btn btn-primary mx-2" (click)="editar(usuario)">
                   Editar
                 </button>
+
                 <button class="btn btn-danger" (click)="eliminar(usuario)">
                   Eliminar
                 </button>
